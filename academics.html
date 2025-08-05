@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Academics - ONESMOS NESIB ACADEMY</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  .subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .subject-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  body.dark-mode .subject-card {
+    background: #263238;
+    color: #b0bec5;
+  }
+  .subject-card:hover {
+    transform: translateY(-8px);
+  }
+  .subject-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="academics.html" class="active">Academics</a></li>
+      <li><a href="student-login.html">Student Login</a></li>
+      <li><a href="admin-login.html">Admin Login</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Our Curriculum & Subjects</h1>
+  <p>We offer a comprehensive curriculum across Primary and Secondary levels with focus on academic excellence.</p>
+  <div class="subject-list">
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/1995/1995550.png" alt="Maths" />
+      <h3>Mathematics</h3>
+      <p>Develop problem-solving and analytical skills from basics to advanced.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/3448/3448498.png" alt="Biology" />
+      <h3>Biology</h3>
+      <p>Study living organisms, human anatomy, and the environment.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Chemistry" />
+      <h3>Chemistry</h3>
+      <p>Explore matter, chemical reactions, and laboratory experiments.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Afaan Oromo" />
+      <h3>Afaan Oromo</h3>
+      <p>Learn the Oromo language, culture, and literature.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/2913/2913478.png" alt="Physics" />
+      <h3>Physics</h3>
+      <p>Understand the fundamental laws of nature and their applications.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="ICT" />
+      <h3>Information & Communication Technology</h3>
+      <p>Develop digital literacy and programming skills.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/2273/2273644.png" alt="Agriculture" />
+      <h3>Agriculture</h3>
+      <p>Learn modern farming, soil science, and sustainable practices.</p>
+    </div>
+    <div class="subject-card">
+      <img class="subject-icon" src="https://cdn-icons-png.flaticon.com/512/3103/3103446.png" alt="English" />
+      <h3>English</h3>
+      <p>Improve communication, reading, and writing skills in English.</p>
+    </div>
+  </div>
+</main>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

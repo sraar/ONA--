@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Settings - ONESMOS NESIB ACADEMY</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  h1 {
+    color: #004d40;
+  }
+  body.dark-mode h1 {
+    color: #a5d6a7;
+  }
+  label {
+    display: block;
+    margin: 20px 0 8px 0;
+    font-weight: 600;
+  }
+  select, input[type="checkbox"] {
+    margin-top: 6px;
+  }
+  .dark-mode-toggle {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .profile-section {
+    margin-top: 30px;
+  }
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #004d40;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  button.save-btn {
+    margin-top: 20px;
+    padding: 10px 18px;
+    font-weight: 700;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button.save-btn:hover {
+    background-color: #004d40;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="student-login.html">Student Login</a></li>
+      <li><a href="admin-login.html">Admin Login</a></li>
+      <li><a href="settings.html" class="active">Settings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Settings</h1>
+
+  <section>
+    <label for="languageSelect">Language:</label>
+    <select id="languageSelect" aria-label="Select Language">
+      <option value="en">English</option>
+      <option value="af">Afaan Oromo</option>
+      <option value="am">Amharic</option>
+    </select>
+  </section>
+
+  <section>
+    <label>
+      <input type="checkbox" id="darkModeToggle" />
+      Enable Dark Mode
+    </label>
+  </section>
+
+  <section class="profile-section">
+    <h2>Profile</h2>
+    <form id="profileForm">
+      <label for="profileName">Name:</label>
+      <input type="text" id="profileName" name="profileName" placeholder="Your name" />
+
+      <label for="profileEmail">Email:</label>
+      <input type="email" id="profileEmail" name="profileEmail" placeholder="Your email" />
+
+      <button type="submit" class="save-btn">Save Profile</button>
+    </form>
+  </section>
+</main>
+
+<script>
+  // Persist language and dark mode settings
+  const languageSelect = document.getElementById('languageSelect');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const profileForm = document.getElementById('profileForm');
+
+  // Load saved settings
+  if(localStorage.getItem('language')) {
+    languageSelect.value = localStorage.getItem('language');
+  }
+  if(localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.checked = true;
+  }
+
+  // Language change handler
+  languageSelect.addEventListener('change', () => {
+    localStorage.setItem('language', languageSelect.value);
+    alert('Language changed to ' + languageSelect.options[languageSelect.selectedIndex].text + '.\nPage reload needed to fully apply.');
+  });
+
+  // Dark mode toggle handler
+  darkModeToggle.addEventListener('change', () => {
+    if(darkModeToggle.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  });
+
+  // Profile form
+  profileForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('profileName').value.trim();
+    const email = document.getElementById('profileEmail').value.trim();
+    if(name && email) {
+      localStorage.setItem('profileName', name);
+      localStorage.setItem('profileEmail', email);
+      alert('Profile saved!');
+    } else {
+      alert('Please enter both name and email.');
+    }
+  });
+
+  // Load profile on page load
+  window.addEventListener('load', () => {
+    if(localStorage.getItem('profileName')){
+      document.getElementById('profileName').value = localStorage.getItem('profileName');
+    }
+    if(localStorage.getItem('profileEmail')){
+      document.getElementById('profileEmail').value = localStorage.getItem('profileEmail');
+    }
+  });
+</script>
+
+</body>
+</html>

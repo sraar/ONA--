@@ -1,0 +1,46 @@
+<!-- practice.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice Questions – Student</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>Practice Questions</h1>
+    <p>Submit your answers for evaluation</p>
+  </header>
+
+  <nav class="dashboard-menu">
+    <ul>
+      <li><a href="student-dashboard.html">Dashboard</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="worksheets.html">Worksheets</a></li>
+      <li><a href="practice.html">Practice Exams</a></li>
+    </ul>
+  </nav>
+
+  <section class="fade-in">
+    <h2>Preview Only – Example Questions</h2>
+    <ul>
+      <li>1. What is the capital of Ethiopia?</li>
+      <li>2. Solve: (3x + 2)(x - 4)</li>
+      <li>3. Who discovered the law of gravity?</li>
+    </ul>
+
+    <form action="https://formspree.io/f/mblkzyng" method="POST">
+      <h2>Submit Answers</h2>
+      <input type="text" name="name" placeholder="Your Full Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="answers" rows="6" placeholder="Type your answers here..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Onesmos Nesib Academy
+  </footer>
+</body>
+</html>

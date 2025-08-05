@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard | Onesmos Nesib Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0074D9;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #0074D9;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #001f3f;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Onesmos Nesib Academy</h1>
+    <nav>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="books.html">Books</a>
+      <a href="worksheets.html">Worksheets</a>
+      <a href="practice.html">Practice</a>
+      <a href="students.html">Students</a>
+      <a href="payments.html">Payments</a>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <div class="card">
+      <h3>Manage Books</h3>
+      <a href="books.html">Go to Books</a>
+    </div>
+
+    <div class="card">
+      <h3>Manage Worksheets</h3>
+      <a href="worksheets.html">Go to Worksheets</a>
+    </div>
+
+    <div class="card">
+      <h3>Manage Practice Exams</h3>
+      <a href="practice.html">Go to Practice</a>
+    </div>
+
+    <div class="card">
+      <h3>Student Info</h3>
+      <a href="students.html">View Students</a>
+    </div>
+
+    <div class="card">
+      <h3>Payments</h3>
+      <a href="payments.html">Payment Panel</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Onesmos Nesib Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login | Onesmos Nesib Academy</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #004aad, #33aaff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+    .login-container {
+      background: rgba(0, 0, 50, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      width: 320px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: #33aaff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0074d9;
+    }
+    .error {
+      color: #ff4c4c;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <form id="admin-login-form">
+      <input type="text" id="username" placeholder="Username" required autocomplete="off" />
+      <input type="password" id="password" placeholder="Password" required autocomplete="off" />
+      <div id="error-msg" class="error"></div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('admin-login-form');
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Your admin credentials
+      const adminUsername = 'ONESMOS';
+      const adminPassword = '@266234300';
+
+      if(username === adminUsername && password === adminPassword) {
+        // Clear error if any
+        errorMsg.textContent = '';
+        alert('Login successful! Redirecting...');
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        errorMsg.textContent = 'Invalid username or password. Please try again.';
+      }
+    });
+  </script>
+
+</body>
+</html>
